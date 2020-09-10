@@ -8,11 +8,13 @@
 #include <chrono> //for chronotime
 using namespace std;
 
-long long int steps = 0;
+long long int steps;
 
 //InsertionSort algorithm
-void insertionSort(vector<int>& arr, long long int& stepCount)
+void insertionSort(vector<int>& arr)
 {
+	long long int stepCount = 0;
+	auto t1 = chrono::high_resolution_clock::now();
 	int i, key, j;
 	stepCount += 4;
 	for (i = 1; i < arr.size(); i++) 
@@ -33,6 +35,10 @@ void insertionSort(vector<int>& arr, long long int& stepCount)
 		stepCount++;
 	}
 	stepCount++;
+	auto t2 = chrono::high_resolution_clock::now();
+	chrono::duration<double, milli> elapsed = t2 - t1;
+	cout << arr.size() << " ELEMENTS: Steps = " << stepCount << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
 }
 
 //Printing the vector arrays function
@@ -43,7 +49,6 @@ void printArray(vector<int>& arr)
 		cout << x << " ";
 	}
 }
-	
 
 int main() 
 {
@@ -168,22 +173,46 @@ int main()
 		reverse10000.push_back(i);
 	}
 
-
-	cout << "INSERTION SORT" << endl;
-	cout << "Array before: " << endl;
-	printArray(sort100);
+	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
+	cout << "SORTED ARRAYS" << endl;
+	insertionSort(sort100);
+	insertionSort(sort200);
+	insertionSort(sort300);
+	insertionSort(sort400);
+	insertionSort(sort500);
+	insertionSort(sort1000);
+	insertionSort(sort4000);
+	insertionSort(sort10000);
+	cout << "REVERSED ARRAYS" << endl;
+	insertionSort(reverse100);
+	insertionSort(reverse200);
+	insertionSort(reverse300);
+	insertionSort(reverse400);
+	insertionSort(reverse500);
+	insertionSort(reverse1000);
+	insertionSort(reverse4000);
+	insertionSort(reverse10000);
+	cout << "RANDOM PERMUTATION ARRAYS" << endl;
+	insertionSort(random100);
+	insertionSort(random200);
+	insertionSort(random300);
+	insertionSort(random400);
+	insertionSort(random500);
+	insertionSort(random1000);
+	insertionSort(random4000);
+	insertionSort(random10000);
+	
+	/*
+	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
+	cout << "SORTED ARRAYS" << endl;
+	steps = 0;
 	auto t1 = chrono::high_resolution_clock::now();
 	insertionSort(sort100, steps);
 	auto t2 = chrono::high_resolution_clock::now();
 	chrono::duration<double, milli> elapsed = t2 - t1;
-	cout << endl << "Array after: " << endl;
-	printArray(sort100);
-	cout << endl << "Number of steps: " << steps << endl;
-	cout << "Algorithm Runtime is: " << elapsed.count() << " miliseconds." << endl;
-
+	cout << "100 ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
 	
-
 	
 	
 	
@@ -313,6 +342,9 @@ int main()
 	//Create a while loop that goes 50 times
 	//	Inside the loop
 	//	U initialize the vector using rand() % n + 1
+
+	create 50 arrays filled with N numbers randomly, sort them, and calculate the average
+	Yeah, first random, then the average of sorting 50 arrays of size N
 	*/
 	
 	
