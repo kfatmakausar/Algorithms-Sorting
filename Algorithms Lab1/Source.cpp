@@ -11,7 +11,7 @@ using namespace std;
 long long int steps;
 
 //InsertionSort algorithm
-void insertionSort(vector<int>& arr)
+void insertionSort(vector<int> &arr)
 {
 	long long int stepCount = 0;
 	auto t1 = chrono::high_resolution_clock::now();
@@ -41,8 +41,65 @@ void insertionSort(vector<int>& arr)
 
 }
 
+// merges two subarrays of array[].
+void merge(vector<int> &arr, int start, int middle, int end) {
+
+	vector<int> leftArray(middle - start + 1);
+	vector<int> rightArray(end - middle);
+
+	// fill in left array
+	for (int i = 0; i < leftArray.size(); ++i)
+		leftArray[i] = arr[start + i];
+
+	// fill in right array
+	for (int i = 0; i < rightArray.size(); ++i)
+		rightArray[i] = arr[middle + 1 + i];
+
+	/* Merge the temp arrays */
+
+	// initial indexes of first and second subarrays
+	int leftIndex = 0, rightIndex = 0;
+
+	// the index we will start at when adding the subarrays back into the main array
+	int currentIndex = start;
+
+	// compare each index of the subarrays adding the lowest value to the currentIndex
+	while (leftIndex < leftArray.size() && rightIndex < rightArray.size()) {
+		if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+			arr[currentIndex] = leftArray[leftIndex];
+			leftIndex++;
+		}
+		else {
+			arr[currentIndex] = rightArray[rightIndex];
+			rightIndex++;
+		}
+		currentIndex++;
+	}
+
+	// copy remaining elements of leftArray[] if any
+	while (leftIndex < leftArray.size()) arr[currentIndex++] = leftArray[leftIndex++];
+
+	// copy remaining elements of rightArray[] if any
+	while (rightIndex < rightArray.size()) arr[currentIndex++] = rightArray[rightIndex++];
+}
+
+// main function that sorts array[start..end] using merge()
+void mergeSort(vector<int> &arr, int start, int end) {
+	// base case
+	if (start < end) {
+		// find the middle point
+		int middle = (start + end) / 2;
+
+		mergeSort(arr, start, middle); // sort first half
+		mergeSort(arr, middle + 1, end);  // sort second half
+
+		// merge the sorted halves
+		merge(arr, start, middle, end);
+	}
+}
+
 //Printing the vector arrays function
-void printArray(vector<int>& arr) 
+void printArray(vector<int> &arr) 
 {
 	for (int x : arr)
 	{
@@ -173,6 +230,14 @@ int main()
 		reverse10000.push_back(i);
 	}
 
+	cout << "MERGE SORT" << endl;
+	cout << "Array before: " << endl;
+	printArray(random100);
+	cout << endl << "Array after: " << endl;
+	mergeSort(random100, 0, (random100.size() - 1));
+	printArray(random100);
+
+	/*
 	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
 	cout << "SORTED ARRAYS" << endl;
 	insertionSort(sort100);
@@ -201,6 +266,8 @@ int main()
 	insertionSort(random1000);
 	insertionSort(random4000);
 	insertionSort(random10000);
+
+	*/
 	
 	/*
 	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
@@ -332,6 +399,9 @@ int main()
 	steps/n = c
 	c *n^2 for insertion ... nlogn for merge
 	make steps global variable and reset it later
+
+	steps / n^2
+	steps / n(logn)
 	*/
 
 	/*
@@ -345,6 +415,12 @@ int main()
 
 	create 50 arrays filled with N numbers randomly, sort them, and calculate the average
 	Yeah, first random, then the average of sorting 50 arrays of size N
+
+	I ran a loop 50 times. In the loop I initialized a temp array of size N, 
+	then created a nested loop to populate the temp array with random values from 1 to N, 
+	then when it's populated, I measured start time, then run algorithm, then measured end time, 
+	then I add the difference between end and start time to the total time variable. 
+	After loop runs 50 times I divide the total time by 50 to get the average.
 	*/
 	
 	
