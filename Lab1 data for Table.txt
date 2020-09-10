@@ -1,0 +1,57 @@
+---------------------------------INSERTION SORT----------------------------------------
+SORTED ARRAYS
+100 ELEMENTS: Steps = 599 | Runtime = 0.1559 miliseconds.
+200 ELEMENTS: Steps = 1199 | Runtime = 0.2585 miliseconds.
+300 ELEMENTS: Steps = 1799 | Runtime = 0.3901 miliseconds.
+400 ELEMENTS: Steps = 2399 | Runtime = 0.546 miliseconds.
+500 ELEMENTS: Steps = 2999 | Runtime = 0.631 miliseconds.
+1000 ELEMENTS: Steps = 5999 | Runtime = 1.2814 miliseconds.
+4000 ELEMENTS: Steps = 23999 | Runtime = 8.005 miliseconds.
+10000 ELEMENTS: Steps = 59999 | Runtime = 14.8732 miliseconds.
+REVERSED ARRAYS
+100 ELEMENTS: Steps = 20399 | Runtime = 5.1076 miliseconds.
+200 ELEMENTS: Steps = 80799 | Runtime = 21.722 miliseconds.
+300 ELEMENTS: Steps = 181199 | Runtime = 53.4661 miliseconds.
+400 ELEMENTS: Steps = 321599 | Runtime = 81.7192 miliseconds.
+500 ELEMENTS: Steps = 501999 | Runtime = 123.451 miliseconds.
+1000 ELEMENTS: Steps = 2003999 | Runtime = 444.441 miliseconds.
+4000 ELEMENTS: Steps = 32015999 | Runtime = 7379.98 miliseconds.
+10000 ELEMENTS: Steps = 200039999 | Runtime = 45579 miliseconds.
+RANDOM PERMUTATION ARRAYS
+100 ELEMENTS: Steps = 10039 | Runtime = 3.1056 miliseconds.
+200 ELEMENTS: Steps = 43219 | Runtime = 12.0904 miliseconds.
+300 ELEMENTS: Steps = 92555 | Runtime = 19.5047 miliseconds.
+400 ELEMENTS: Steps = 160691 | Runtime = 41.534 miliseconds.
+500 ELEMENTS: Steps = 259711 | Runtime = 55.9872 miliseconds.
+1000 ELEMENTS: Steps = 1000019 | Runtime = 234.826 miliseconds.
+4000 ELEMENTS: Steps = 15846627 | Runtime = 3597.08 miliseconds.
+10000 ELEMENTS: Steps = 99309943 | Runtime = 22651 miliseconds.
+
+---------------------------------MERGE SORT----------------------------------------
+SORTED ARRAYS
+100 ELEMENTS: Steps = 0 | Runtime = 2.7318 miliseconds.
+200 ELEMENTS: Steps = 0 | Runtime = 7.3821 miliseconds.
+300 ELEMENTS: Steps = 0 | Runtime = 9.5635 miliseconds.
+400 ELEMENTS: Steps = 0 | Runtime = 13.3768 miliseconds.
+500 ELEMENTS: Steps = 0 | Runtime = 17.0844 miliseconds.
+1000 ELEMENTS: Steps = 0 | Runtime = 34.5636 miliseconds.
+4000 ELEMENTS: Steps = 0 | Runtime = 149.576 miliseconds.
+10000 ELEMENTS: Steps = 0 | Runtime = 382.006 miliseconds.
+REVERSED ARRAYS
+100 ELEMENTS: Steps = 0 | Runtime = 3.5352 miliseconds.
+200 ELEMENTS: Steps = 0 | Runtime = 5.0377 miliseconds.
+300 ELEMENTS: Steps = 0 | Runtime = 9.5775 miliseconds.
+400 ELEMENTS: Steps = 0 | Runtime = 13.1865 miliseconds.
+500 ELEMENTS: Steps = 0 | Runtime = 16.3854 miliseconds.
+1000 ELEMENTS: Steps = 0 | Runtime = 36.3217 miliseconds.
+4000 ELEMENTS: Steps = 0 | Runtime = 132.56 miliseconds.
+10000 ELEMENTS: Steps = 0 | Runtime = 392.386 miliseconds.
+RANDOM PERMUTATION ARRAYS
+100 ELEMENTS: Steps = 0 | Runtime = 3.9583 miliseconds.
+200 ELEMENTS: Steps = 0 | Runtime = 4.9365 miliseconds.
+300 ELEMENTS: Steps = 0 | Runtime = 10.1155 miliseconds.
+400 ELEMENTS: Steps = 0 | Runtime = 11.9077 miliseconds.
+500 ELEMENTS: Steps = 0 | Runtime = 13.8586 miliseconds.
+1000 ELEMENTS: Steps = 0 | Runtime = 32.7323 miliseconds.
+4000 ELEMENTS: Steps = 0 | Runtime = 147.875 miliseconds.
+10000 ELEMENTS: Steps = 0 | Runtime = 363.565 miliseconds.

@@ -229,15 +229,7 @@ int main()
 	{
 		reverse10000.push_back(i);
 	}
-
-	cout << "MERGE SORT" << endl;
-	cout << "Array before: " << endl;
-	printArray(random100);
-	cout << endl << "Array after: " << endl;
-	mergeSort(random100, 0, (random100.size() - 1));
-	printArray(random100);
-
-	/*
+	
 	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
 	cout << "SORTED ARRAYS" << endl;
 	insertionSort(sort100);
@@ -267,22 +259,159 @@ int main()
 	insertionSort(random4000);
 	insertionSort(random10000);
 
-	*/
-	
-	/*
-	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
+	cout << endl << "---------------------------------MERGE SORT----------------------------------------" << endl;
 	cout << "SORTED ARRAYS" << endl;
-	steps = 0;
+
 	auto t1 = chrono::high_resolution_clock::now();
-	insertionSort(sort100, steps);
+	mergeSort(sort100, 0, (sort100.size() - 1));
 	auto t2 = chrono::high_resolution_clock::now();
 	chrono::duration<double, milli> elapsed = t2 - t1;
-	cout << "100 ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+	cout << sort100.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort200, 0, (sort200.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort200.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort300, 0, (sort300.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort300.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort400, 0, (sort400.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort400.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort500, 0, (sort500.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort500.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort1000, 0, (sort1000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort1000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort4000, 0, (sort4000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort4000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(sort10000, 0, (sort10000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << sort10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	cout << "REVERSED ARRAYS" << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse100, 0, (reverse100.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse100.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse200, 0, (reverse200.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse200.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse300, 0, (reverse300.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse300.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse400, 0, (reverse400.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse400.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse500, 0, (reverse500.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse500.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse1000, 0, (reverse1000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse1000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse4000, 0, (reverse4000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse4000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(reverse10000, 0, (reverse10000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << reverse10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	cout << "RANDOM PERMUTATION ARRAYS" << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random100, 0, (random100.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random100.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random200, 0, (random200.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random200.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random300, 0, (random300.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random300.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random400, 0, (random400.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random400.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random500, 0, (random500.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random500.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random1000, 0, (random1000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random1000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random4000, 0, (random4000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random4000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+
+	t1 = chrono::high_resolution_clock::now();
+	mergeSort(random10000, 0, (random10000.size() - 1));
+	t2 = chrono::high_resolution_clock::now();
+	elapsed = t2 - t1;
+	cout << random10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 	
 	
-	
-	
+
 	/*
 	PRINTING THE VECTOR ARRAYS
 	for (int x : reverse500)
