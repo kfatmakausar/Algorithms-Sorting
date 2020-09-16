@@ -8,7 +8,7 @@
 #include <chrono> //for chronotime
 using namespace std;
 
-long long int steps;
+int steps;
 
 //InsertionSort algorithm
 void insertionSort(vector<int> &arr)
@@ -42,59 +42,90 @@ void insertionSort(vector<int> &arr)
 }
 
 // merges two subarrays of array[].
-void merge(vector<int> &arr, int start, int middle, int end) {
+void merge(vector<int> &arr, int start, int middle, int end, int &steps) {
 
 	vector<int> leftArray(middle - start + 1);
 	vector<int> rightArray(end - middle);
-
+	steps += 2;
 	// fill in left array
 	for (int i = 0; i < leftArray.size(); ++i)
+	{
+		steps += 2;
 		leftArray[i] = arr[start + i];
+		steps++;
+	}
 
 	// fill in right array
 	for (int i = 0; i < rightArray.size(); ++i)
+	{
+		steps += 2;
 		rightArray[i] = arr[middle + 1 + i];
+		steps++;
+	}
+		
 
 	/* Merge the temp arrays */
 
 	// initial indexes of first and second subarrays
 	int leftIndex = 0, rightIndex = 0;
+	steps += 2;
 
 	// the index we will start at when adding the subarrays back into the main array
 	int currentIndex = start;
+	steps++; 
 
 	// compare each index of the subarrays adding the lowest value to the currentIndex
 	while (leftIndex < leftArray.size() && rightIndex < rightArray.size()) {
+		steps += 2;
 		if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+			steps++;
 			arr[currentIndex] = leftArray[leftIndex];
 			leftIndex++;
+			steps += 2;
 		}
 		else {
 			arr[currentIndex] = rightArray[rightIndex];
 			rightIndex++;
+			steps += 2;
 		}
 		currentIndex++;
+		steps++;
 	}
 
 	// copy remaining elements of leftArray[] if any
-	while (leftIndex < leftArray.size()) arr[currentIndex++] = leftArray[leftIndex++];
+	while (leftIndex < leftArray.size())
+	{
+		steps++;
+		arr[currentIndex++] = leftArray[leftIndex++];
+		steps++;
+	}
 
 	// copy remaining elements of rightArray[] if any
-	while (rightIndex < rightArray.size()) arr[currentIndex++] = rightArray[rightIndex++];
+	while (rightIndex < rightArray.size())
+	{
+		steps++;
+		arr[currentIndex++] = rightArray[rightIndex++];
+		steps++;
+	}
 }
 
 // main function that sorts array[start..end] using merge()
-void mergeSort(vector<int> &arr, int start, int end) {
+void mergeSort(vector<int> &arr, int start, int end, int &steps) {
 	// base case
 	if (start < end) {
+		steps++;
 		// find the middle point
 		int middle = (start + end) / 2;
+		steps++;
 
-		mergeSort(arr, start, middle); // sort first half
-		mergeSort(arr, middle + 1, end);  // sort second half
+		mergeSort(arr, start, middle, steps); // sort first half
+		steps++;
+		mergeSort(arr, middle + 1, end, steps);  // sort second half
+		steps++;
 
 		// merge the sorted halves
-		merge(arr, start, middle, end);
+		merge(arr, start, middle, end, steps);
+		steps++;
 	}
 }
 
@@ -229,7 +260,8 @@ int main()
 	{
 		reverse10000.push_back(i);
 	}
-	
+
+	/*
 	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
 	cout << "SORTED ARRAYS" << endl;
 	insertionSort(sort100);
@@ -258,154 +290,180 @@ int main()
 	insertionSort(random1000);
 	insertionSort(random4000);
 	insertionSort(random10000);
+	*/
 
 	cout << endl << "---------------------------------MERGE SORT----------------------------------------" << endl;
 	cout << "SORTED ARRAYS" << endl;
 
+	int steps = 0;
 	auto t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort100, 0, (sort100.size() - 1));
+	mergeSort(sort100, 0, (sort100.size() - 1), steps);
 	auto t2 = chrono::high_resolution_clock::now();
 	chrono::duration<double, milli> elapsed = t2 - t1;
 	cout << sort100.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort200, 0, (sort200.size() - 1));
+	mergeSort(sort200, 0, (sort200.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort200.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort300, 0, (sort300.size() - 1));
+	mergeSort(sort300, 0, (sort300.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort300.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort400, 0, (sort400.size() - 1));
+	mergeSort(sort400, 0, (sort400.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort400.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort500, 0, (sort500.size() - 1));
+	mergeSort(sort500, 0, (sort500.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort500.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort1000, 0, (sort1000.size() - 1));
+	mergeSort(sort1000, 0, (sort1000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort1000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort4000, 0, (sort4000.size() - 1));
+	mergeSort(sort4000, 0, (sort4000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort4000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(sort10000, 0, (sort10000.size() - 1));
+	mergeSort(sort10000, 0, (sort10000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << sort10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	
 	cout << "REVERSED ARRAYS" << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse100, 0, (reverse100.size() - 1));
+	mergeSort(reverse100, 0, (reverse100.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse100.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse200, 0, (reverse200.size() - 1));
+	mergeSort(reverse200, 0, (reverse200.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse200.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse300, 0, (reverse300.size() - 1));
+	mergeSort(reverse300, 0, (reverse300.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse300.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse400, 0, (reverse400.size() - 1));
+	mergeSort(reverse400, 0, (reverse400.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse400.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse500, 0, (reverse500.size() - 1));
+	mergeSort(reverse500, 0, (reverse500.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse500.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse1000, 0, (reverse1000.size() - 1));
+	mergeSort(reverse1000, 0, (reverse1000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse1000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse4000, 0, (reverse4000.size() - 1));
+	mergeSort(reverse4000, 0, (reverse4000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse4000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(reverse10000, 0, (reverse10000.size() - 1));
+	mergeSort(reverse10000, 0, (reverse10000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << reverse10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
 	cout << "RANDOM PERMUTATION ARRAYS" << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random100, 0, (random100.size() - 1));
+	mergeSort(random100, 0, (random100.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random100.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random200, 0, (random200.size() - 1));
+	mergeSort(random200, 0, (random200.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random200.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random300, 0, (random300.size() - 1));
+	mergeSort(random300, 0, (random300.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random300.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random400, 0, (random400.size() - 1));
+	mergeSort(random400, 0, (random400.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random400.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random500, 0, (random500.size() - 1));
+	mergeSort(random500, 0, (random500.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random500.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random1000, 0, (random1000.size() - 1));
+	mergeSort(random1000, 0, (random1000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random1000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random4000, 0, (random4000.size() - 1));
+	mergeSort(random4000, 0, (random4000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random4000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 
+	steps = 0;
 	t1 = chrono::high_resolution_clock::now();
-	mergeSort(random10000, 0, (random10000.size() - 1));
+	mergeSort(random10000, 0, (random10000.size() - 1), steps);
 	t2 = chrono::high_resolution_clock::now();
 	elapsed = t2 - t1;
 	cout << random10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
@@ -420,6 +478,9 @@ int main()
 	}
 	*/
 	
+	//CANVA FOR GRAPH DISPLAY
+	
+	//count steps in merge helper function and mergesort and add them , u pass steps by reference into the functions and make steps a global variable
 	
 	
 	//for loops to initialize arrays with n size
