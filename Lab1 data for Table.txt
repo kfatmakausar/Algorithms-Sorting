@@ -1,57 +1,80 @@
 ---------------------------------INSERTION SORT----------------------------------------
 SORTED ARRAYS
-100 ELEMENTS: Steps = 599 | Runtime = 0.1559 miliseconds.
-200 ELEMENTS: Steps = 1199 | Runtime = 0.2585 miliseconds.
-300 ELEMENTS: Steps = 1799 | Runtime = 0.3901 miliseconds.
-400 ELEMENTS: Steps = 2399 | Runtime = 0.546 miliseconds.
-500 ELEMENTS: Steps = 2999 | Runtime = 0.631 miliseconds.
-1000 ELEMENTS: Steps = 5999 | Runtime = 1.2814 miliseconds.
-4000 ELEMENTS: Steps = 23999 | Runtime = 8.005 miliseconds.
-10000 ELEMENTS: Steps = 59999 | Runtime = 14.8732 miliseconds.
+100 ELEMENTS: Steps = 599 | Runtime = 0.2228 miliseconds. | C Approximation: 0.0599
+200 ELEMENTS: Steps = 1199 | Runtime = 0.4576 miliseconds. | C Approximation: 0.029975
+300 ELEMENTS: Steps = 1799 | Runtime = 0.6374 miliseconds. | C Approximation: 0.0199889
+400 ELEMENTS: Steps = 2399 | Runtime = 0.7231 miliseconds. | C Approximation: 0.0149938
+500 ELEMENTS: Steps = 2999 | Runtime = 0.9314 miliseconds. | C Approximation: 0.011996
+1000 ELEMENTS: Steps = 5999 | Runtime = 2.1042 miliseconds. | C Approximation: 0.005999
+4000 ELEMENTS: Steps = 23999 | Runtime = 8.4642 miliseconds. | C Approximation: 0.00149994
+10000 ELEMENTS: Steps = 59999 | Runtime = 23.7712 miliseconds. | C Approximation: 0.00059999
 REVERSED ARRAYS
-100 ELEMENTS: Steps = 20399 | Runtime = 5.1076 miliseconds.
-200 ELEMENTS: Steps = 80799 | Runtime = 21.722 miliseconds.
-300 ELEMENTS: Steps = 181199 | Runtime = 53.4661 miliseconds.
-400 ELEMENTS: Steps = 321599 | Runtime = 81.7192 miliseconds.
-500 ELEMENTS: Steps = 501999 | Runtime = 123.451 miliseconds.
-1000 ELEMENTS: Steps = 2003999 | Runtime = 444.441 miliseconds.
-4000 ELEMENTS: Steps = 32015999 | Runtime = 7379.98 miliseconds.
-10000 ELEMENTS: Steps = 200039999 | Runtime = 45579 miliseconds.
+100 ELEMENTS: Steps = 20399 | Runtime = 7.8396 miliseconds. | C Approximation: 2.0399
+200 ELEMENTS: Steps = 80799 | Runtime = 32.0542 miliseconds. | C Approximation: 2.01998
+300 ELEMENTS: Steps = 181199 | Runtime = 58.8599 miliseconds. | C Approximation: 2.01332
+400 ELEMENTS: Steps = 321599 | Runtime = 101.132 miliseconds. | C Approximation: 2.00999
+500 ELEMENTS: Steps = 501999 | Runtime = 157.65 miliseconds. | C Approximation: 2.008
+1000 ELEMENTS: Steps = 2003999 | Runtime = 671.8 miliseconds. | C Approximation: 2.004
+4000 ELEMENTS: Steps = 32015999 | Runtime = 10914.1 miliseconds. | C Approximation: 2.001
+10000 ELEMENTS: Steps = 200039999 | Runtime = 67952.8 miliseconds. | C Approximation: 2.0004
 RANDOM PERMUTATION ARRAYS
-100 ELEMENTS: Steps = 10039 | Runtime = 3.1056 miliseconds.
-200 ELEMENTS: Steps = 43219 | Runtime = 12.0904 miliseconds.
-300 ELEMENTS: Steps = 92555 | Runtime = 19.5047 miliseconds.
-400 ELEMENTS: Steps = 160691 | Runtime = 41.534 miliseconds.
-500 ELEMENTS: Steps = 259711 | Runtime = 55.9872 miliseconds.
-1000 ELEMENTS: Steps = 1000019 | Runtime = 234.826 miliseconds.
-4000 ELEMENTS: Steps = 15846627 | Runtime = 3597.08 miliseconds.
-10000 ELEMENTS: Steps = 99309943 | Runtime = 22651 miliseconds.
+100 ELEMENTS: Steps = 10039 | Runtime = 5.9666 miliseconds. | C Approximation: 1.0039
+200 ELEMENTS: Steps = 43219 | Runtime = 12.8792 miliseconds. | C Approximation: 1.08048
+300 ELEMENTS: Steps = 92555 | Runtime = 43.1252 miliseconds. | C Approximation: 1.02839
+400 ELEMENTS: Steps = 160691 | Runtime = 70.7684 miliseconds. | C Approximation: 1.00432
+500 ELEMENTS: Steps = 259711 | Runtime = 106.263 miliseconds. | C Approximation: 1.03884
+1000 ELEMENTS: Steps = 1000019 | Runtime = 340.8 miliseconds. | C Approximation: 1.00002
+4000 ELEMENTS: Steps = 15846627 | Runtime = 5319.75 miliseconds. | C Approximation: 0.990414
+10000 ELEMENTS: Steps = 99309943 | Runtime = 33848.4 miliseconds. | C Approximation: 0.993099
+
 
 ---------------------------------MERGE SORT----------------------------------------
 SORTED ARRAYS
-100 ELEMENTS: Steps = 0 | Runtime = 2.7318 miliseconds.
-200 ELEMENTS: Steps = 0 | Runtime = 7.3821 miliseconds.
-300 ELEMENTS: Steps = 0 | Runtime = 9.5635 miliseconds.
-400 ELEMENTS: Steps = 0 | Runtime = 13.3768 miliseconds.
-500 ELEMENTS: Steps = 0 | Runtime = 17.0844 miliseconds.
-1000 ELEMENTS: Steps = 0 | Runtime = 34.5636 miliseconds.
-4000 ELEMENTS: Steps = 0 | Runtime = 149.576 miliseconds.
-10000 ELEMENTS: Steps = 0 | Runtime = 382.006 miliseconds.
+100 ELEMENTS: Steps = 5774 | Runtime = 3.2449 miliseconds. | C Approximation: 12.5381
+200 ELEMENTS: Steps = 12958 | Runtime = 7.4184 miliseconds. | C Approximation: 12.2284
+300 ELEMENTS: Steps = 20662 | Runtime = 18.4022 miliseconds. | C Approximation: 12.075
+400 ELEMENTS: Steps = 28726 | Runtime = 15.4998 miliseconds. | C Approximation: 11.9862
+500 ELEMENTS: Steps = 36518 | Runtime = 19.7829 miliseconds. | C Approximation: 11.7523
+1000 ELEMENTS: Steps = 80046 | Runtime = 45.9873 miliseconds. | C Approximation: 11.5878
+4000 ELEMENTS: Steps = 376214 | Runtime = 202.264 miliseconds. | C Approximation: 11.3399
+10000 ELEMENTS: Steps = 1044102 | Runtime = 543.784 miliseconds. | C Approximation: 11.3362
 REVERSED ARRAYS
-100 ELEMENTS: Steps = 0 | Runtime = 3.5352 miliseconds.
-200 ELEMENTS: Steps = 0 | Runtime = 5.0377 miliseconds.
-300 ELEMENTS: Steps = 0 | Runtime = 9.5775 miliseconds.
-400 ELEMENTS: Steps = 0 | Runtime = 13.1865 miliseconds.
-500 ELEMENTS: Steps = 0 | Runtime = 16.3854 miliseconds.
-1000 ELEMENTS: Steps = 0 | Runtime = 36.3217 miliseconds.
-4000 ELEMENTS: Steps = 0 | Runtime = 132.56 miliseconds.
-10000 ELEMENTS: Steps = 0 | Runtime = 392.386 miliseconds.
+100 ELEMENTS: Steps = 5298 | Runtime = 3.2288 miliseconds. | C Approximation: 11.5045
+200 ELEMENTS: Steps = 11906 | Runtime = 7.0397 miliseconds. | C Approximation: 11.2356
+300 ELEMENTS: Steps = 18970 | Runtime = 11.0564 miliseconds. | C Approximation: 11.0862
+400 ELEMENTS: Steps = 26422 | Runtime = 15.5015 miliseconds. | C Approximation: 11.0249
+500 ELEMENTS: Steps = 34078 | Runtime = 19.636 miliseconds. | C Approximation: 10.9671
+1000 ELEMENTS: Steps = 74666 | Runtime = 41.971 miliseconds. | C Approximation: 10.809
+4000 ELEMENTS: Steps = 350694 | Runtime = 193.132 miliseconds. | C Approximation: 10.5707
+10000 ELEMENTS: Steps = 961894 | Runtime = 699.274 miliseconds. | C Approximation: 10.4436
 RANDOM PERMUTATION ARRAYS
-100 ELEMENTS: Steps = 0 | Runtime = 3.9583 miliseconds.
-200 ELEMENTS: Steps = 0 | Runtime = 4.9365 miliseconds.
-300 ELEMENTS: Steps = 0 | Runtime = 10.1155 miliseconds.
-400 ELEMENTS: Steps = 0 | Runtime = 11.9077 miliseconds.
-500 ELEMENTS: Steps = 0 | Runtime = 13.8586 miliseconds.
-1000 ELEMENTS: Steps = 0 | Runtime = 32.7323 miliseconds.
-4000 ELEMENTS: Steps = 0 | Runtime = 147.875 miliseconds.
-10000 ELEMENTS: Steps = 0 | Runtime = 363.565 miliseconds.
+100 ELEMENTS: Steps = 6225 | Runtime = 6.6562 miliseconds. | C Approximation: 13.5174
+200 ELEMENTS: Steps = 14202 | Runtime = 13.5168 miliseconds. | C Approximation: 13.4024
+300 ELEMENTS: Steps = 22766 | Runtime = 21.6862 miliseconds. | C Approximation: 13.3046
+400 ELEMENTS: Steps = 31873 | Runtime = 30.2726 miliseconds. | C Approximation: 13.2993
+500 ELEMENTS: Steps = 40912 | Runtime = 37.8189 miliseconds. | C Approximation: 13.1664
+1000 ELEMENTS: Steps = 90393 | Runtime = 79.1967 miliseconds. | C Approximation: 13.0857
+4000 ELEMENTS: Steps = 429529 | Runtime = 234.725 miliseconds. | C Approximation: 12.9469
+10000 ELEMENTS: Steps = 1190897 | Runtime = 616.885 miliseconds. | C Approximation: 12.93
+
+---------------------------------50 INSTANCES INSERTION SORT----------------------------------------
+50 INSTANCES INSERTION SORT
+50 INSTANCES OF 100 ELEMENTS: Steps = 519010 | Runtime = 163.767 miliseconds | Average time: 3.27535 miliseconds. | C Approximation: 1.038
+50 INSTANCES OF 200 ELEMENTS: Steps = 2042090 | Runtime = 725.248 miliseconds | Average time: 14.505 miliseconds. | C Approximation: 1.02103
+50 INSTANCES OF 300 ELEMENTS: Steps = 4580526 | Runtime = 1516.16 miliseconds | Average time: 30.3233 miliseconds. | C Approximation: 1.01789
+50 INSTANCES OF 400 ELEMENTS: Steps = 8051418 | Runtime = 2697.91 miliseconds | Average time: 53.9581 miliseconds. | C Approximation: 1.00642
+50 INSTANCES OF 500 ELEMENTS: Steps = 12578690 | Runtime = 4358.85 miliseconds | Average time: 87.177 miliseconds. | C Approximation: 1.00629
+50 INSTANCES OF 1000 ELEMENTS: Steps = 50177098 | Runtime = 17015.4 miliseconds | Average time: 340.309 miliseconds. | C Approximation: 1.00354
+50 INSTANCES OF 4000 ELEMENTS: Steps = 802551986 | Runtime = 271134 miliseconds | Average time: 5422.68 miliseconds. | C Approximation: 1.00319
+50 INSTANCES OF 10000 ELEMENTS: Steps = 5003738162 | Runtime = 1.6908e+06 miliseconds | Average time: 33815.9 miliseconds. | C Approximation: 1.00075
+---------------------------------50 INSTANCES MERGE SORT----------------------------------------
+50 INSTANCES MERGE SORT
+50 INSTANCES OF 100 ELEMENTS: Steps = 312888 | Runtime = 189.906 miliseconds | Average time: 3.79812 miliseconds. | C Approximation: 13.5869
+50 INSTANCES OF 200 ELEMENTS: Steps = 710751 | Runtime = 427.427 miliseconds | Average time: 8.54855 miliseconds. | C Approximation: 13.4146
+50 INSTANCES OF 300 ELEMENTS: Steps = 1140119 | Runtime = 655.026 miliseconds | Average time: 13.1005 miliseconds. | C Approximation: 13.3257
+50 INSTANCES OF 400 ELEMENTS: Steps = 1591635 | Runtime = 905.39 miliseconds | Average time: 18.1078 miliseconds. | C Approximation: 13.2822
+50 INSTANCES OF 500 ELEMENTS: Steps = 2047417 | Runtime = 1174.01 miliseconds | Average time: 23.4803 miliseconds. | C Approximation: 13.178
+50 INSTANCES OF 1000 ELEMENTS: Steps = 4518257 | Runtime = 2530.6 miliseconds | Average time: 50.6121 miliseconds. | C Approximation: 13.0817
+50 INSTANCES OF 4000 ELEMENTS: Steps = 21477434 | Runtime = 11509.5 miliseconds | Average time: 230.19 miliseconds. | C Approximation: 12.9475
+50 INSTANCES OF 10000 ELEMENTS: Steps = 59537974 | Runtime = 31380.7 miliseconds | Average time: 627.614 miliseconds. | C Approximation: 12.9285
+
