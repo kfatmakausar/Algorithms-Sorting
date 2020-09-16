@@ -8,12 +8,12 @@
 #include <chrono> //for chronotime
 using namespace std;
 
-int steps=0;
-int stepCount=0;
+long long int steps=0;
+long long int stepCount=0;
+
 //InsertionSort algorithm
 void insertionSort(vector<int> &arr)
 {
-	auto t1 = chrono::high_resolution_clock::now();
 	int i, key, j;
 	stepCount += 4;
 	for (i = 1; i < arr.size(); i++) 
@@ -34,9 +34,6 @@ void insertionSort(vector<int> &arr)
 		stepCount++;
 	}
 	stepCount++;
-	auto t2 = chrono::high_resolution_clock::now();
-	chrono::duration<double, milli> elapsed = t2 - t1;
-	cout << arr.size() << " ELEMENTS: Steps = " << stepCount << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 }
 
 // merges two subarrays of array[].
@@ -135,8 +132,37 @@ void printArray(vector<int> &arr)
 	}
 }
 
+//Generating sorted arrays for n input
+void generateSort(vector<int> &arr, int n)
+{
+	for (int i = 1; i <= n; i++)
+	{
+		arr.push_back(i);
+	}
+}
+
+//Generate reverse arrays for n input
+void generateReverse(vector<int> &arr, int n)
+{
+	for (int i = n; i >= 1; i--)
+	{
+		arr.push_back(i);
+	}
+}
+
+//Generate random permutation arrays for n input
+void generateRandom(vector<int> &arr, int n)
+{
+	for (int i = 1; i <= n; i++)
+	{
+		arr.push_back(i);
+	}
+	random_shuffle(arr.begin(), arr.end());
+}
+
 int main() 
 {
+	/*
 	//Declare the sorted vector arrays
 	vector<int> sort100;
 	vector<int> sort200;
@@ -257,8 +283,9 @@ int main()
 	{
 		reverse10000.push_back(i);
 	}
+	*/
 
-	
+	/*
 	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
 	cout << "SORTED ARRAYS" << endl;
 	stepCount = 0;
@@ -490,8 +517,109 @@ int main()
 	elapsed = t2 - t1;
 	cout << random10000.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
 	
+	*/
 
+	int inputs[8] = { 100, 200, 300, 400, 500, 1000, 4000, 10000 };
+	
+	cout << "---------------------------------INSERTION SORT----------------------------------------" << endl;
+	cout << "SORTED ARRAYS" << endl;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		stepCount = 0;
+		vector<int> arr;
+		generateSort(arr, inputs[i]);
+		auto t1 = chrono::high_resolution_clock::now();
+		insertionSort(arr);
+		auto t2 = chrono::high_resolution_clock::now();
+		chrono::duration<double, milli> elapsed = t2 - t1;
+		cout << arr.size() << " ELEMENTS: Steps = " << stepCount << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+		arr.clear();
+	}
+	cout << "REVERSED ARRAYS" << endl;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		stepCount = 0;
+		vector<int> arr;
+		generateReverse(arr, inputs[i]);
+		auto t1 = chrono::high_resolution_clock::now();
+		insertionSort(arr);
+		auto t2 = chrono::high_resolution_clock::now();
+		chrono::duration<double, milli> elapsed = t2 - t1;
+		cout << arr.size() << " ELEMENTS: Steps = " << stepCount << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+		arr.clear();
+	}
+	cout << "RANDOM PERMUTATION ARRAYS" << endl;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		stepCount = 0;
+		vector<int> arr;
+		generateRandom(arr, inputs[i]);
+		auto t1 = chrono::high_resolution_clock::now();
+		insertionSort(arr);
+		auto t2 = chrono::high_resolution_clock::now();
+		chrono::duration<double, milli> elapsed = t2 - t1;
+		cout << arr.size() << " ELEMENTS: Steps = " << stepCount << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+		arr.clear();
+	}
+	
+	cout << endl << endl << "---------------------------------MERGE SORT----------------------------------------" << endl;
+	cout << "SORTED ARRAYS" << endl;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		steps = 0;
+		vector<int> arr;
+		generateSort(arr, inputs[i]);
+		auto t1 = chrono::high_resolution_clock::now();
+		mergeSort(arr, 0, (arr.size() - 1));
+		auto t2 = chrono::high_resolution_clock::now();
+		chrono::duration<double, milli> elapsed = t2 - t1;
+		cout << arr.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+		arr.clear();
+	}
+	cout << "REVERSED ARRAYS" << endl;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		steps = 0;
+		vector<int> arr;
+		generateReverse(arr, inputs[i]);
+		auto t1 = chrono::high_resolution_clock::now();
+		mergeSort(arr, 0, (arr.size() - 1));
+		auto t2 = chrono::high_resolution_clock::now();
+		chrono::duration<double, milli> elapsed = t2 - t1;
+		cout << arr.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+		arr.clear();
+	}
+	cout << "RANDOM PERMUTATION ARRAYS" << endl;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		steps = 0;
+		vector<int> arr;
+		generateRandom(arr, inputs[i]);
+		auto t1 = chrono::high_resolution_clock::now();
+		mergeSort(arr, 0, (arr.size() - 1));
+		auto t2 = chrono::high_resolution_clock::now();
+		chrono::duration<double, milli> elapsed = t2 - t1;
+		cout << arr.size() << " ELEMENTS: Steps = " << steps << " | Runtime = " << elapsed.count() << " miliseconds." << endl;
+		arr.clear();
+	}
+	
 
+	/*
+	long long int totalT = 0;
+	for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++)
+	{
+		for (int i = 0; i < 50; i++)
+		{
+			vector<int> arr;
+			generateRandom(arr, inputs[i]);
+			auto t1 = chrono::high_resolution_clock::now();
+			insertionSort(arr);
+			auto t2 = chrono::high_resolution_clock::now();
+			chrono::duration<double, milli> elapsed = t2 - t1;
+			totalT += elapsed.count();
+		}
+	}
+	*/
 
 
 
