@@ -288,7 +288,7 @@ int main()
 			arr.clear();
 		}
 		cApprox = (stepCount / 50) / (pow(inputs[i],2));
-		cout << "50 INSTANCES OF " << inputs[i] << " ELEMENTS: Steps = " << stepCount << " | Runtime = " << totalT << " miliseconds | Average time: " << totalT/50 << " miliseconds. | C Approximation: " << cApprox << endl;
+		cout << "50 INSTANCES OF " << inputs[i] << " ELEMENTS: Steps Average = " << stepCount/50 << " | Runtime = " << totalT << " miliseconds | Average time: " << totalT/50 << " miliseconds. | C Approximation: " << cApprox << endl;
 	}
 
 	//50 instances of random inputs mergeSort
@@ -313,7 +313,7 @@ int main()
 			arr.clear();
 		}
 		cApprox = (steps / 50) / (inputs[i] * log(inputs[i]));
-		cout << "50 INSTANCES OF " << inputs[i] << " ELEMENTS: Steps = " << steps << " | Runtime = " << totalT << " miliseconds | Average time: " << totalT/50 << " miliseconds. | C Approximation: " << cApprox << endl;
+		cout << "50 INSTANCES OF " << inputs[i] << " ELEMENTS: Steps Average = " << steps/50 << " | Runtime = " << totalT << " miliseconds | Average time: " << totalT/50 << " miliseconds. | C Approximation: " << cApprox << endl;
 	}
 	
 	
